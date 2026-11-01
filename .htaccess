@@ -1,0 +1,11 @@
+DirectoryIndex index.php
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteRule ^(?:src|views|config|database|docs|azure|certs|tests)(?:/|$) - [F,L,NC]
+</IfModule>
+
+<FilesMatch "(^\.|\.(sql|ini|log|sh)$|^README\.md$)">
+    Require all denied
+</FilesMatch>
